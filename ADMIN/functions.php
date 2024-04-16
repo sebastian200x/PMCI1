@@ -841,7 +841,7 @@ function holidaytable()
 	}
 
 	// Fetch holiday data from the database
-	$sql = "SELECT id, holiday_name, holiday_date FROM holiday ORDER BY id DESC";
+	$sql = "SELECT id, holiday_name, holiday_date FROM holiday ORDER BY id ASC";
 	$result = $mysqli->query($sql);
 
 	if ($result->num_rows > 0) {

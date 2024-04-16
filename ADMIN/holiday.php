@@ -48,21 +48,22 @@ if (isset($_POST['load'])) {
                     <div class="buttonz">
                         <input style="background-color: rgb(47, 47, 228)" type="submit" name="add" id="add" value="Add">
                         <input type="submit" name="save" id="save" value="Save">
-                        <input style="background-color: rgb(148, 148, 0)" type="submit" name="load" id="load" value="Load Default">
+                        <input style="background-color: rgb(148, 148, 0)" type="submit" name="load" id="load"
+                            value="Load Default">
+                    </div>
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th>HOLIDAY</th>
+                                <th>DATE</th>
+                                <th></th>
+                            </tr>
+                            <?php
+                            echo holidaytable(); // Echo the function call to populate the form
+                            ?>
+                        </table>
                     </div>
                 </form>
-                <div class="table">
-                    <table>
-                        <tr>
-                            <th>HOLIDAY</th>
-                            <th>DATE</th>
-                            <th></th>
-                        </tr>
-                        <?php
-                        echo holidaytable(); // Echo the function call to populate the form
-                        ?>
-                    </table>
-                </div>
 
             </div>
         </div>
@@ -80,7 +81,7 @@ if (isset($_POST['load'])) {
 
         // Send an AJAX request to the server
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 // Display an alert with the server response
                 alert(this.responseText);
